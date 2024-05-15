@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1714333902 source:c:\bevprog2\amoba\szamlalo.cpp
+	"graphics.hpp"
+	"szamlalo.h"
+	<iostream>
+
+1618178770 c:\bevprog2\amoba\include\graphics.hpp
+	<string>
+	<vector>
+
+1714335556 c:\bevprog2\amoba\szamlalo.h
+	"graphics.hpp"
+	"widget.h"
+
+1714142782 c:\bevprog2\amoba\widget.h
+	"graphics.hpp"
+
+1714328411 source:c:\bevprog2\amoba\widget.cpp
+	"widget.h"
+	"graphics.hpp"
+
