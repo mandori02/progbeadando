@@ -1,12 +1,13 @@
 #include "graphics.hpp"
 #include "szamlalo.h"
+#include "Window.h"
 #include <iostream>
 using namespace std;
 using namespace genv;
 
 
-Szamlalo::Szamlalo(int x, int y, int sx, int sy, int maxh, int minh)
-    : Widget(x,y,sx,sy) , _maxh(maxh), _minh(minh)
+Szamlalo::Szamlalo(int x, int y, int sx, int sy, int maxh, int minh, Window * w)
+    : Widget(x,y,sx,sy, w) , _maxh(maxh), _minh(minh)
 {
     _szam = 0;
     _plusHitX = _x + _size_x/4*3;

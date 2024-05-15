@@ -2,7 +2,7 @@
 #include "graphics.hpp"
 using namespace genv;
 
-Widget::Widget(int x, int y, int sx, int sy) : _x(x), _y(y), _size_x(sx), _size_y(sy)
+Widget::Widget(int x, int y, int sx, int sy, Window * w) : _x(x), _y(y), _size_x(sx), _size_y(sy)
 {
     gout << font("LiberationSans-Regular.ttf",_size_y - _size_y/4);
 }

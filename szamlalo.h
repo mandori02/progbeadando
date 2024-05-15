@@ -7,7 +7,7 @@ class Szamlalo : public Widget {
 protected:
     int _maxh, _minh;
 public:
-    Szamlalo(int x, int y, int sx, int sy, int maxh, int minh);
+    Szamlalo(int x, int y, int sx, int sy, int maxh, int minh, Window * w);
     virtual void draw() ;
     virtual void handle(genv::event ev);
     int _szam;

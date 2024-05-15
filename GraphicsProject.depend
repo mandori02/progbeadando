@@ -8,14 +8,41 @@
 	<string>
 	<vector>
 
-1714335556 c:\bevprog2\amoba\szamlalo.h
+1715805836 c:\bevprog2\amoba\szamlalo.h
 	"graphics.hpp"
 	"widget.h"
 
-1714142782 c:\bevprog2\amoba\widget.h
+1715805050 c:\bevprog2\amoba\widget.h
 	"graphics.hpp"
+	"Window.h"
 
-1714328411 source:c:\bevprog2\amoba\widget.cpp
+1715801997 source:c:\bevprog2\amoba\widget.cpp
 	"widget.h"
 	"graphics.hpp"
+
+1715805579 c:\bevprog2\amoba\window.h
+	"widget.h"
+	<vector>
+
+1715805112 source:c:\bevprog2\amoba\gamemaster.cpp
+	"GameMaster.h"
+	"Window.h"
+
+1715804864 c:\bevprog2\amoba\gamemaster.h
+	"Window.h"
+
+1715804748 source:c:\bevprog2\amoba\main.cpp
+	"graphics.hpp"
+	"widget.h"
+	"GameMaster.h"
+	"szamlalo.h"
+	<vector>
+	<iostream>
+	"Window.h"
+	<fstream>
+
+1715805732 source:c:\bevprog2\amoba\window.cpp
+	"Window.h"
+	"graphics.hpp"
+	"Widget.h"
 
