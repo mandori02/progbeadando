@@ -18,6 +18,7 @@ void gridDrawer(){
         int y = i * 40;
         gout << move_to(0, y) << color(255,255,255) << line(600, 0);
     }
+    gout << refresh;
 
 }
 
@@ -60,6 +61,57 @@ void tableDrawer(vector<vector<int>> m)
     }
 }
 
+bool isWinner(bool ki, vector<vector<int>> m)
+{
+    int player = ki ? 2 : 1; // Az aktuális játékos jelölése
+
+    // Sorok ellenõrzése
+    for (int i = 0; i < 15; ++i) {
+        int count = 0;
+        for (int j = 0; j < 15; ++j) {
+            if (m[i][j] == player) {
+                count++;
+                if (count == 5) return true;
+            } else {
+                count = 0;
+            }
+        }
+    }
+
+    // Oszlopok ellenõrzése
+    for (int j = 0; j < 15; ++j) {
+        int count = 0;
+        for (int i = 0; i < 15; ++i) {
+            if (m[i][j] == player) {
+                count++;
+                if (count == 5) return true;
+            } else {
+                count = 0;
+            }
+        }
+    }
+
+    // Átlók ellenõrzése
+
+    // Fõátló
+    for (int i = 0; i <= 10; ++i) {
+        for (int j = 0; j <= 10; ++j) {
+            if (m[i][j] == player && m[i+1][j+1] == player && m[i+2][j+2] == player && m[i+3][j+3] == player && m[i+4][j+4] == player)
+                return true;
+        }
+    }
+    // Mellékátló
+    for (int i = 0; i <= 10; ++i) {
+        for (int j = 4; j < 15; ++j) {
+            if (m[i][j] == player && m[i+1][j-1] == player && m[i+2][j-2] == player && m[i+3][j-3] == player && m[i+4][j-4] == player)
+                return true;
+        }
+    }
+
+    return false;
+}
+
+
 int main()
 {
     gout.open(600,600);
@@ -70,30 +122,40 @@ int main()
 
 
     while (gin >> ev && ev.keycode != key_escape) {
-        gridDrawer();
-        tableDrawer(allas);
-        if(ev.button == btn_left)
+        if(!isWinner(kijon, allas))
         {
-            int oszlop = getMouseCol(ev.pos_x);
-            int sor = getMouseRow(ev.pos_y);
-            if(allas[sor][oszlop] == 0)
+            tableDrawer(allas);
+            gridDrawer();
+            if(ev.button == btn_left)
             {
-                if(kijon)
+                int oszlop = getMouseCol(ev.pos_x);
+                int sor = getMouseRow(ev.pos_y);
+                if(allas[sor][oszlop] == 0)
                 {
-                    allas[sor][oszlop] = 2;
+                    if(kijon)
+                    {
+                        allas[sor][oszlop] = 2;
+                    }
+                    else
+                    {
+                        allas[sor][oszlop] = 1;
+                    }
+                    kijon = !kijon;
                 }
-                else
-                {
-                    allas[sor][oszlop] = 1;
-                }
-                kijon = !kijon;
             }
+            /*if(ev.keycode == key_enter)
+                matrixToConsole(allas);*/
         }
-        if(ev.keycode == key_enter)
-            matrixToConsole(allas);
+        else{
 
+            gout << move_to(0,0) << color(0,0,0) << box(600,600);
+            if(kijon)
+                gout << move_to(100,100) << color(255,255,255) << text("X nyert! Nyomj Esc-et a kilépéshez");
+            else
+                gout << move_to(100,100) << color(255,255,255) << text("O nyert! Nyomj Esc-et a kilépéshez");
+            gout << refresh;
+        }
 
-        gout << refresh;
     }
     return 0;
 }
