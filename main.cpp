@@ -31,18 +31,34 @@ void matrixToConsole(vector<vector<int>> m)
     }
 }
 
+int getMouseRow(int posY)
+{
+    return posY/40;
+}
+
+int getMouseCol(int posX)
+{
+    return posX/40;
+
+}
+
 int main()
 {
     gout.open(600,600);
     event ev;
     vector<vector<int>> allas(15, vector<int>(15, 0));
-    matrixToConsole(allas);
-
-
+    //matrixToConsole(allas);
 
 
     while (gin >> ev && ev.keycode != key_escape) {
         gridDrawer();
+
+        if(ev.button == btn_left)
+        {
+            cout << getMouseCol(ev.pos_x);
+            cout << getMouseRow(ev.pos_y);
+        }
+
 
         gout << refresh;
     }
