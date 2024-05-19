@@ -46,18 +46,32 @@ int main()
 {
     gout.open(600,600);
     event ev;
+    bool kijon = false; // ha false O (1), ha true X (2)
     vector<vector<int>> allas(15, vector<int>(15, 0));
     //matrixToConsole(allas);
 
 
     while (gin >> ev && ev.keycode != key_escape) {
         gridDrawer();
-
         if(ev.button == btn_left)
         {
-            cout << getMouseCol(ev.pos_x);
-            cout << getMouseRow(ev.pos_y);
+            int oszlop = getMouseCol(ev.pos_x);
+            int sor = getMouseRow(ev.pos_y);
+            if(allas[sor][oszlop] == 0)
+            {
+                if(kijon)
+                {
+                    allas[sor][oszlop] = 2;
+                }
+                else
+                {
+                    allas[sor][oszlop] = 1;
+                }
+                kijon = !kijon;
+            }
         }
+        if(ev.keycode == key_enter)
+            matrixToConsole(allas);
 
 
         gout << refresh;
