@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1714333902 source:c:\bevprog2\amoba\szamlalo.cpp
+1715805809 source:c:\bevprog2\amoba\szamlalo.cpp
 	"graphics.hpp"
 	"szamlalo.h"
+	"Window.h"
 	<iostream>
 
 1618178770 c:\bevprog2\amoba\include\graphics.hpp
@@ -24,14 +25,14 @@
 	"widget.h"
 	<vector>
 
-1715805112 source:c:\bevprog2\amoba\gamemaster.cpp
+1716136102 source:c:\bevprog2\amoba\gamemaster.cpp
 	"GameMaster.h"
 	"Window.h"
 
 1715804864 c:\bevprog2\amoba\gamemaster.h
 	"Window.h"
 
-1715804748 source:c:\bevprog2\amoba\main.cpp
+1716136149 source:c:\bevprog2\amoba\main.cpp
 	"graphics.hpp"
 	"widget.h"
 	"GameMaster.h"
@@ -41,7 +42,7 @@
 	"Window.h"
 	<fstream>
 
-1715805732 source:c:\bevprog2\amoba\window.cpp
+1716135251 source:c:\bevprog2\amoba\window.cpp
 	"Window.h"
 	"graphics.hpp"
 	"Widget.h"
