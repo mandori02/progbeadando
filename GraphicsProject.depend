@@ -32,18 +32,30 @@
 1715804864 c:\bevprog2\amoba\gamemaster.h
 	"Window.h"
 
-1716136149 source:c:\bevprog2\amoba\main.cpp
+1716145047 source:c:\bevprog2\amoba\main.cpp
 	"graphics.hpp"
 	"widget.h"
-	"GameMaster.h"
-	"szamlalo.h"
 	<vector>
 	<iostream>
-	"Window.h"
 	<fstream>
 
-1716135251 source:c:\bevprog2\amoba\window.cpp
+1716145056 source:c:\bevprog2\amoba\window.cpp
 	"Window.h"
 	"graphics.hpp"
 	"Widget.h"
+	"Board.h"
+	"Tile.h"
+
+1716144394 c:\bevprog2\amoba\board.h
+	"widget.h"
+	"Tile.h"
+
+1716144823 c:\bevprog2\amoba\tile.h
+	"graphics.hpp"
+	"widget.h"
+	"Window.h"
+
+1716144673 source:c:\bevprog2\amoba\board.cpp
+	"Tile.h"
+	"Window.h"
 
