@@ -42,6 +42,24 @@ int getMouseCol(int posX)
 
 }
 
+void tableDrawer(vector<vector<int>> m)
+{
+    for(int i = 0; i < 15; i++)
+    {
+        for(int j = 0; j < 15; j++)
+        {
+            if(m[i][j] == 1)
+            {
+                gout << move_to(j*40+15,i*40+15) << color(240,50,0) << text("O");
+            }
+            if(m[i][j] == 2)
+            {
+                gout << move_to(j*40+15,i*40+15) << color(240,50,0) << text("X");
+            }
+        }
+    }
+}
+
 int main()
 {
     gout.open(600,600);
@@ -53,6 +71,7 @@ int main()
 
     while (gin >> ev && ev.keycode != key_escape) {
         gridDrawer();
+        tableDrawer(allas);
         if(ev.button == btn_left)
         {
             int oszlop = getMouseCol(ev.pos_x);

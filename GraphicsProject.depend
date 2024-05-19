@@ -32,7 +32,7 @@
 1715804864 c:\bevprog2\amoba\gamemaster.h
 	"Window.h"
 
-1716145047 source:c:\bevprog2\amoba\main.cpp
+1716151991 source:c:\bevprog2\amoba\main.cpp
 	"graphics.hpp"
 	"widget.h"
 	<vector>
